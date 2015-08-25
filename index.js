@@ -44,7 +44,7 @@ module.exports = function(opts) {
     else if (opts.key.indexOf('.') > -1) {
       var dot = new Dot();
       var value = dot.pick(opts.key, content);
-      ver = semver.inc(value, opts.type);
+      ver = semver.inc(value, opts.type, opts.preid);
       dot.str(opts.key, ver, content);
     }
     else {
